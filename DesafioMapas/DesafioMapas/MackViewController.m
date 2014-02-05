@@ -20,6 +20,7 @@
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     [locationManager setDelegate:self];
     [locationManager startUpdatingLocation];
+    [_indicador startAnimating];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -40,6 +41,15 @@
     
     [_worldMap setRegion:region animated:YES];
     [_worldMap setShowsUserLocation:YES];
+    [_indicador stopAnimating];
+    _indicador.hidden = TRUE;
+    [locationManager stopUpdatingLocation];
+    MKPointAnnotation *pm = [[MKPointAnnotation alloc]init];
+    [pm setCoordinate : loc];
+    [_indicador stopAnimating];
+    _indicador.hidden = TRUE;
+    //ponto de marcaçao
+    [_worldMap addAnnotation:pm];
 }
 
 @end
