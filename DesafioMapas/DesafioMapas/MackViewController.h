@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface MackViewController : UIViewController
+@interface MackViewController : UIViewController {
+    CLLocationManager *locationManager;
+}
+
+@property (weak, nonatomic) IBOutlet MKMapView *worldMap;
 
 @end

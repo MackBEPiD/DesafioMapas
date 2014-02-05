@@ -21,6 +21,8 @@
 		605FBC6418A2BF37006CEF6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605FBC4618A2BF37006CEF6D /* UIKit.framework */; };
 		605FBC6C18A2BF37006CEF6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 605FBC6A18A2BF37006CEF6D /* InfoPlist.strings */; };
 		605FBC6E18A2BF37006CEF6D /* DesafioMapasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 605FBC6D18A2BF37006CEF6D /* DesafioMapasTests.m */; };
+		605FBC7818A2C03D006CEF6D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605FBC7718A2C03D006CEF6D /* CoreLocation.framework */; };
+		605FBC7A18A2C308006CEF6D /* Mackenzie.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 605FBC7918A2C308006CEF6D /* Mackenzie.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		605FBC6918A2BF37006CEF6D /* DesafioMapasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesafioMapasTests-Info.plist"; sourceTree = "<group>"; };
 		605FBC6B18A2BF37006CEF6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		605FBC6D18A2BF37006CEF6D /* DesafioMapasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesafioMapasTests.m; sourceTree = "<group>"; };
+		605FBC7718A2C03D006CEF6D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		605FBC7918A2C308006CEF6D /* Mackenzie.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Mackenzie.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				605FBC7818A2C03D006CEF6D /* CoreLocation.framework in Frameworks */,
 				605FBC4518A2BF37006CEF6D /* CoreGraphics.framework in Frameworks */,
 				605FBC4718A2BF37006CEF6D /* UIKit.framework in Frameworks */,
 				605FBC4318A2BF37006CEF6D /* Foundation.framework in Frameworks */,
@@ -82,6 +87,7 @@
 		605FBC3618A2BF37006CEF6D = {
 			isa = PBXGroup;
 			children = (
+				605FBC7918A2C308006CEF6D /* Mackenzie.gpx */,
 				605FBC4818A2BF37006CEF6D /* DesafioMapas */,
 				605FBC6718A2BF37006CEF6D /* DesafioMapasTests */,
 				605FBC4118A2BF37006CEF6D /* Frameworks */,
@@ -101,6 +107,7 @@
 		605FBC4118A2BF37006CEF6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				605FBC7718A2C03D006CEF6D /* CoreLocation.framework */,
 				605FBC4218A2BF37006CEF6D /* Foundation.framework */,
 				605FBC4418A2BF37006CEF6D /* CoreGraphics.framework */,
 				605FBC4618A2BF37006CEF6D /* UIKit.framework */,
@@ -230,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				605FBC5B18A2BF37006CEF6D /* Images.xcassets in Resources */,
+				605FBC7A18A2C308006CEF6D /* Mackenzie.gpx in Resources */,
 				605FBC4D18A2BF37006CEF6D /* InfoPlist.strings in Resources */,
 				605FBC5618A2BF37006CEF6D /* Main.storyboard in Resources */,
 			);
