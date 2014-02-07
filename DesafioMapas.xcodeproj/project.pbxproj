@@ -23,6 +23,7 @@
 		605FBC6E18A2BF37006CEF6D /* DesafioMapasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 605FBC6D18A2BF37006CEF6D /* DesafioMapasTests.m */; };
 		605FBC7818A2C03D006CEF6D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605FBC7718A2C03D006CEF6D /* CoreLocation.framework */; };
 		605FBC7A18A2C308006CEF6D /* Mackenzie.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 605FBC7918A2C308006CEF6D /* Mackenzie.gpx */; };
+		608BF1F318A569C1001E9FB8 /* icone.png in Resources */ = {isa = PBXBuildFile; fileRef = 608BF1F218A569C1001E9FB8 /* icone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		605FBC6D18A2BF37006CEF6D /* DesafioMapasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesafioMapasTests.m; sourceTree = "<group>"; };
 		605FBC7718A2C03D006CEF6D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		605FBC7918A2C308006CEF6D /* Mackenzie.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Mackenzie.gpx; sourceTree = "<group>"; };
+		608BF1F218A569C1001E9FB8 /* icone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		605FBC3618A2BF37006CEF6D = {
 			isa = PBXGroup;
 			children = (
+				608BF1F218A569C1001E9FB8 /* icone.png */,
 				605FBC7918A2C308006CEF6D /* Mackenzie.gpx */,
 				605FBC4818A2BF37006CEF6D /* DesafioMapas */,
 				605FBC6718A2BF37006CEF6D /* DesafioMapasTests */,
@@ -242,6 +245,7 @@
 				605FBC5B18A2BF37006CEF6D /* Images.xcassets in Resources */,
 				605FBC7A18A2C308006CEF6D /* Mackenzie.gpx in Resources */,
 				605FBC4D18A2BF37006CEF6D /* InfoPlist.strings in Resources */,
+				608BF1F318A569C1001E9FB8 /* icone.png in Resources */,
 				605FBC5618A2BF37006CEF6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,7 +390,6 @@
 		605FBC7218A2BF37006CEF6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -403,7 +406,6 @@
 		605FBC7318A2BF37006CEF6D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
