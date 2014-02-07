@@ -51,5 +51,53 @@
     //ponto de marcaçao
     [_worldMap addAnnotation:pm];
 }
+- (IBAction)Seg:(id)sender {
+    //SegmentControl switch para selecao dos tipos
+    switch (((UISegmentedControl *) sender).selectedSegmentIndex) {
+        case 0:
+            [self viewDidDisappear:nil];
+            [_worldMap setMapType:MKMapTypeStandard];
+            
+            break;
+            
+        case 1:
+            [self viewDidDisappear:nil];
+            [_worldMap setMapType:MKMapTypeSatellite];
+            break;
+            
+        case 2:
+            [self viewDidDisappear:nil];
+            [_worldMap setMapType:MKMapTypeHybrid];
+            break;
+            
+    }
+    
+}
+- (IBAction)search:(id)sender { //botao de busca
+    
+    [_textField resignFirstResponder];//esconder a caixa de texto
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:_textField.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        //Error checking
+        
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        MKCoordinateRegion region;
+        region.center.latitude = placemark.region.center.latitude;
+        region.center.longitude = placemark.region.center.longitude;
+        MKCoordinateSpan span;
+        double radius = placemark.region.radius / 1000; // convert to km
+        
+        NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
+        span.latitudeDelta = radius / 112.0;
+        
+        region.span = span;
+        
+        [_worldMap setRegion:region animated:YES];
+        [_indicador stopAnimating];
+        _indicador.hidden = TRUE;
+    }];
+    
+}
+
 
 @end
