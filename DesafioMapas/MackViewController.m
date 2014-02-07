@@ -8,7 +8,9 @@
 
 #import "MackViewController.h"
 
-@interface MackViewController ()
+@interface MackViewController (){
+    CLLocationCoordinate2D loc;
+}
 
 @end
 
@@ -35,7 +37,8 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     //NSLog(@"%@", newLocation);
-    CLLocationCoordinate2D loc = [newLocation coordinate];
+    
+    loc = [newLocation coordinate];
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
     
@@ -177,6 +180,48 @@
     }
     
     return nil;
+}
+
+#pragma mark - Traçar rotas
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    CLLocationCoordinate2D destino = [[view annotation] coordinate];
+    MKPlacemark *pmOrigem = [[MKPlacemark alloc] initWithCoordinate:loc addressDictionary:nil];
+    MKPlacemark *pmDestino = [[MKPlacemark alloc] initWithCoordinate:destino addressDictionary:nil];
+    
+    MKMapItem *miOrigem = [[MKMapItem alloc]initWithPlacemark:pmOrigem];
+    MKMapItem *miDestino = [[MKMapItem alloc]initWithPlacemark:pmDestino];
+    
+    [self rotaEntreDoisPontosDe:miOrigem para:miDestino];
+}
+-(void)rotaEntreDoisPontosDe:(MKMapItem *)origem para:(MKMapItem *)destino{
+    MKDirectionsRequest *request = [[MKDirectionsRequest alloc]init];
+    request.source = origem;
+    request.destination = destino;
+    request.requestsAlternateRoutes = YES;
+    
+    MKDirections *directions = [[MKDirections alloc]initWithRequest:request];
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+        if(error){
+            NSLog(@"%@", error.localizedDescription);
+        }else{
+            [_worldMap removeOverlays: _worldMap.overlays];
+            if([response.routes count] > 0){
+                MKRoute *rota = response.routes[0];
+                [_worldMap addOverlay:rota.polyline level:MKOverlayLevelAboveRoads];
+            }else{
+                //NSLog(@"Rotas não encontrada");
+                UIAlertView *msg = [[UIAlertView alloc] initWithTitle:@"Nenhuma rota encontrada!" message:@"Tente algo diferente" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [msg show];
+            }
+        }
+    }];
+}
+-(MKOverlayRenderer *)mapView: (MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.lineWidth = 3.0;
+    
+    return renderer;
 }
 
 @end

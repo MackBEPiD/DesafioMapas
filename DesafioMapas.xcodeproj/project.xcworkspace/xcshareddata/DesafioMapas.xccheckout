@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F30214AE-90EC-4101-8664-32B4BA9B4F8B</string>
+	<string>4398330C-3BCE-41F7-B3FD-8B9EB670D35C</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DesafioMapas</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/MackMobile/DesafioMapas.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DesafioMapas/DesafioMapas.xcodeproj/project.xcworkspace</string>
+	<string>DesafioMapas.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>FDCDBEBE-82BA-48F2-B054-106F913B5148</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/MackMobile/DesafioMapas.git</string>
