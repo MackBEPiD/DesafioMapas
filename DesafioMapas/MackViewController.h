@@ -10,11 +10,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface MackViewController : UIViewController {
+@interface MackViewController : UIViewController <UITextFieldDelegate> {
     CLLocationManager *locationManager;
+    NSMutableArray *buscaPointAnnotation;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *worldMap;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicador;
+@property (weak, nonatomic) IBOutlet UISwitch *btnAtualizacao;
+@property (weak, nonatomic) IBOutlet UITextField *txtLocal;
 
 @end
