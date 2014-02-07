@@ -16,6 +16,5 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *worldMap;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicador;
-@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
